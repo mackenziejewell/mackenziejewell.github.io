@@ -167,10 +167,10 @@ input, select, textarea {
 	}
 
 	h1 {
-		font-size: 2.75em;
+		font-size: 2.25em;
 		font-weight: 700;
 		line-height: 1.3;
-		margin: 0 0 1em 0;
+		margin: 0 0 0.25em 0;
 		letter-spacing: -0.035em;
 	}
 
@@ -2596,6 +2596,7 @@ input, select, textarea {
 				width: 100%;
 				border-radius: 4px;
 				overflow: hidden;
+				
 			}
 
 				.tiles article > .image img {
@@ -2706,27 +2707,27 @@ input, select, textarea {
 					}
 
 			.tiles article.style1 > .image:before {
-				background-color: #ffbd5a;
+				background-color: #9fbde8;
 			}
 
 			.tiles article.style2 > .image:before {
-				background-color: #7ecaf6;
+				background-color:  #3a5f93;
 			}
 
 			.tiles article.style3 > .image:before {
-				background-color: #7bd0c1;
+				background-color:  #0f2f5c;
 			}
 
 			.tiles article.style4 > .image:before {
-				background-color: #c75b9b;
+				background-color: #93a7f3;
 			}
 
 			.tiles article.style5 > .image:before {
-				background-color: #ae85ca;
+				background-color: #415396;
 			}
 
 			.tiles article.style6 > .image:before {
-				background-color: #8499e7;
+				background-color: #1d2c62;
 			}
 
 			body:not(.is-touch) .tiles article:hover > .image {
@@ -2738,7 +2739,7 @@ input, select, textarea {
 
 				body:not(.is-touch) .tiles article:hover > .image:before {
 					background-color: #333333;
-					opacity: 0.35;
+					opacity: 0.75;
 				}
 
 				body:not(.is-touch) .tiles article:hover > .image:after {
@@ -2759,7 +2760,7 @@ input, select, textarea {
 			-webkit-transform: scale(0.9);
 			-ms-transform: scale(0.9);
 			transform: scale(0.9);
-			opacity: 0;
+			opacity: 0.75;
 		}
 
 		body.is-touch .tiles article .content {
@@ -2988,7 +2989,8 @@ input, select, textarea {
 		max-width: 80%;
 		height: 100%;
 		-webkit-overflow-scrolling: touch;
-		background: #585858;
+		background: #90aed7;
+		 /* #585858; */
 		color: #ffffff;
 		cursor: default;
 		visibility: hidden;

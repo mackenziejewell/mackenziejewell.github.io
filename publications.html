@@ -34,9 +34,9 @@
 			  float: left;
 			  color: #000000;
 			  text-align: center;
-			  padding: 14px 60px;
+			  padding: 10px 60px;
 			  text-decoration: none;
-			  font-size: 17px;
+			  font-size: 20px;
 			  border-bottom: 0px solid transparent;
 			}
 			
@@ -72,6 +72,36 @@
 			margin-right: 5px;
 			}
 
+			.leftverticalline {
+            border-left: 5px solid #90aed7;
+			float: left;
+			font-size: 16px;
+			flex-shrink: 20;
+			margin-right: 10px;
+			padding:10px;
+			background-color: #abceff21;
+            /* height: 200px; */
+        	}
+
+			.logo-container {
+			display: flex;  /* Use flexbox to position elements */
+			align-items: center;  /* Vertically center items */
+			}
+
+			.tagline {
+			margin-left: 10px; /* Adjust the margin to position tagline */
+			}
+			.logo {
+			margin-left: 0px; /* Adjust the margin to position tagline */
+			}
+
+			h1, p {
+			/* font-size: 12px; */
+			margin: 0;
+			display: inline-block;
+			}
+
+
 		</style>
 
 	</head>
@@ -79,7 +109,7 @@
     <!-- Top Nav bar -->
 	<div class="topnav">
 		<a href="index.html">Home</a>
-		<a href="research.html">Research</a>
+		<!-- <a href="research.html">Research</a> -->
 		<a class="active" href="publications.html">Publications</a>
 		<a href="outreach.html">Outreach</a>
 		<a href="cv.html">Curriculum Vitae</a>
@@ -125,31 +155,75 @@
 					<div id="main">
 						<div class="inner">
 							<h1>Publications</h1>
-							<!-- <span class="image main"><img src="images/pic13.jpg" alt="" /></span> -->
-							<h3>Submitted</h3>
-							<p>
-								<u>Jewell, M. E.</u>, Hutchings, J. K., and Geiger, C. A.: <b>Atmospheric highs drive asymmetric sea ice drift during lead opening from Point Barrow</b>, <i>The Cryosphere Discuss</i>. [preprint], <a href="https://doi.org/10.5194/tc-2023-9">https://doi.org/10.5194/tc-2023-9</a>, in review, 2023.
-								<br><a href="./files/tc-2023-9.pdf" class="button primary icon solid fa-download" download>preprint</a>
-								
-
-							<!-- </p><a href="/images/myw3schoolsimage.jpg" download></a> -->
 							
+							<br>
+							<br>
+							
+							<h3>Submitted</h3>
 
-							</a>
-							<h3>Peer-reviewed</h3>
-
-							<p>	
-								<u>Jewell, M. E.</u>, & Hutchings, J. K. (2023). <b>Observational perspectives on Beaufort Sea ice breakouts.</b> <i>Geophysical Research Letters</i>, 50, e2022GL101408. <a href="https://doi.org/10.1029/2022GL101408">https://doi.org/10.1029/2022GL101408</a>
-								<br><a href="./files/Geophysical Research Letters - 2022 - Jewell - Observational Perspectives on Beaufort Sea Ice Breakouts.pdf" class="button primary icon solid fa-download" download>PDF</a>
-							</p>
-	
-					
+							<div class="logo-container">
+								<p class="logo"><a href="./files/tc-2023-9.pdf" class="button primary icon solid fa-download" download>preprint</a></p>
+								<p class="tagline"><u>Jewell, M. E.</u>, Hutchings, J. K., and Geiger, C. A.: <b>Atmospheric highs drive asymmetric sea ice drift during lead opening from Point Barrow</b>, <i>The Cryosphere Discuss</i>. [preprint], <a href="https://doi.org/10.5194/tc-2023-9">https://doi.org/10.5194/tc-2023-9</a>, in review, 2023.</p>
+							</div>
 							<div class="box">
-								<!-- <div class = "vertical"></div> -->
-								<span class="left" >
-									<a href="https://doi.org/10.1029/2022GL099024" style="color:#90aed7;">Rheinlænder et al. (2022, https://doi.org/10.1029/2022GL099024)</a> used a dynamic sea ice model to investigate the drivers of sea ice break up in the Beaufort Sea by simulating an exceptional fracturing event that occurred in winter 2013. In this commentary of Rheinlænder et al. (2022), we use observational records to provide an alternative perspective on the mechanisms controlling Beaufort break ups; we show how weather patterns have controlled sea ice fracturing and drift during similar events in the past, demonstrating that record-setting persistent winds led to the major break up in 2013.
+								<span class="leftverticalline" >
+									In this article, we use remotely sensed and reanalysis data to describe the atmospheric drivers of episodic sea ice lead opening from Point Barrow, Alaska's northernmost headland. We demonstrate how these recurrent winter events are controlled by wind direction and coastline geometry, and how they produce regionally-varying contributions to climatological sea ice drift patterns.
 								</span>
 							</div>
+							
+
+
+							<h3>Peer-reviewed</h3>
+
+							<div class="logo-container">
+								<p class="logo"><a href="./files/Geophysical Research Letters - 2022 - Jewell - Observational Perspectives on Beaufort Sea Ice Breakouts.pdf" class="button primary icon solid fa-download" download>PDF</a></p>
+								<p class="tagline"><u>Jewell, M. E.</u>, & Hutchings, J. K. (2023). <b>Observational perspectives on Beaufort Sea ice breakouts.</b> <i>Geophysical Research Letters</i>, 50, e2022GL101408. <a href="https://doi.org/10.1029/2022GL101408">https://doi.org/10.1029/2022GL101408</a></p>
+							</div>
+
+							<div class="box">
+								<span class="leftverticalline" >
+									<a href="https://doi.org/10.1029/2022GL099024" style="color:#6b8dbc;">Rheinlænder et al. (2022, https://doi.org/10.1029/2022GL099024)</a> used a dynamic sea ice model to investigate the drivers of winter sea ice fracturing in the Beaufort Sea by simulating an exceptional breakout of pack ice that occurred in winter 2013. In this commentary of Rheinlænder et al. (2022), we compare 2013 to similar events in the satellite record to provide an observational perspective on the role of weather patterns in controlling Beaufort pack ice breakout events. We highlight the role of wind direction in controlling breakouts and demonstrate that record-setting persistent winds led to the major event in 2013.
+								</span>
+							</div>
+
+							
+							<br>
+							<h3>More...</h3>
+
+							<h3>
+								<a href="https://scholar.google.com/citations?hl=en&user=ehDAOAMAAAAJ" style="color:#6b8dbc;">Google Scholar</a>
+							
+							</h3>
+			
+							<h3>
+								<a href="https://www.researchgate.net/profile/Mackenzie_Jewell" style="color:#6b8dbc;">ResearchGate</a>
+
+
+							</h3>
+							
+																					<!-- <p style="display:inline-block;">
+								<a href="./files/tc-2023-9.pdf" class="button primary icon solid fa-download" download>preprint</a>
+								<p class="tagline"><u>Jewell, M. E.</u>, Hutchings, J. K., and Geiger, C. A.: <b>Atmospheric highs drive asymmetric sea ice drift during lead opening from Point Barrow</b>, <i>The Cryosphere Discuss</i>. [preprint], <a href="https://doi.org/10.5194/tc-2023-9">https://doi.org/10.5194/tc-2023-9</a>, in review, 2023.</p>
+							</p>
+
+
+							<p style="display:inline-block;">
+								<a href="./files/tc-2023-9.pdf" class="button primary icon solid fa-download" download>preprint</a>
+								<span class="indentbox" >
+									<u>Jewell, M. E.</u>, Hutchings, J. K., and Geiger, C. A.: <b>Atmospheric highs drive asymmetric sea ice drift during lead opening from Point Barrow</b>, <i>The Cryosphere Discuss</i>. [preprint], <a href="https://doi.org/10.5194/tc-2023-9">https://doi.org/10.5194/tc-2023-9</a>, in review, 2023.
+								</span>
+							  </p> -->
+
+
+							<!-- <p> -->
+								<!-- <span class="leftverticalline" >
+									<u>Jewell, M. E.</u>, Hutchings, J. K., and Geiger, C. A.: <b>Atmospheric highs drive asymmetric sea ice drift during lead opening from Point Barrow</b>, <i>The Cryosphere Discuss</i>. [preprint], <a href="https://doi.org/10.5194/tc-2023-9">https://doi.org/10.5194/tc-2023-9</a>, in review, 2023.
+								</span> -->
+								<!-- <a href="./files/tc-2023-9.pdf" class="button primary icon solid fa-download" download>preprint</a> <u>Jewell, M. E.</u>, Hutchings, J. K., and Geiger, C. A.: <b>Atmospheric highs drive asymmetric sea ice drift during lead opening from Point Barrow</b>, <i>The Cryosphere Discuss</i>. [preprint], <a href="https://doi.org/10.5194/tc-2023-9">https://doi.org/10.5194/tc-2023-9</a>, in review, 2023. -->
+								<!-- <br> -->
+							<!-- </p> -->
+
+							<!-- </a> -->
 
 
 						</div>
@@ -163,6 +237,8 @@
 								<ul class="icons">
 									<li><a href="https://www.linkedin.com/in/mackenzie-jewell-9bb44b174" class="icon brands style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>
 									<li><a href="https://github.com/mackenziejewell" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="https://scholar.google.com/citations?hl=en&user=ehDAOAMAAAAJ" class="icon brands style2 fa-google"><span class="label">GoogleScholar</span></a></li>
+									<li><a href="https://www.researchgate.net/profile/Mackenzie_Jewell" class="icon brands style2 fa-researchgate"><span class="label">ResearchGate</span></a></li>
 									<li><a href="mailto:mackenzie.e.jewell@gmail.com" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
 								</ul>
 							</section>
