@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>MacKenzie Jewell - fascinating fractures</title>
+		<title>MacKenzie Jewell - outreach</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -17,8 +17,8 @@
 		<style>
 			body {
 			  margin: 20px;
+			  /* font-size: 20px; */
 			  font-family: Arial, Helvetica, sans-serif;
-
 			}
 			
 			.topnav {
@@ -50,135 +50,7 @@
 			  background-color: #90aed7;
 			  color: white;
 			}
-
-
-			/* formatting for overlain images */
-			* {box-sizing: border-box;}
-
-			.img-comp-container {
-				display: flex;
-				position: relative;
-				height: 400px ; /*  should be the same height as the images */
-				/* width: 533px; */
-			}
-
-			.img-comp-img {
-				position: absolute;
-				width: auto;
-				height: auto;
-				overflow: hidden;
-			}
-
-			.img-comp-img img {
-				display: block;
-				vertical-align: middle;
-				border-radius: 0.5rem;
-				}
-
-			.img-comp-slider {
-				position: absolute;
-				z-index: 9;
-				cursor: ew-resize;
-				/*set the appearance of the slider:*/
-				width: 40px;
-				height: 40px;
-				background-color: rgb(194, 103, 126);
-				opacity: 0.9;
-				border-radius: 100%;
-				box-shadow: -2px 5px 16px 1px black;
-
-				}
-
-			.img-comp-slider:hover {
-				box-shadow: 0 0 10px rgba(0,0,0,0.3); 
-			}
-
 		</style>
-		
-		
-	
-		<script>
-		/* function for creating image comparison slider */
-		function initComparisons() {
-		var x, i;
-		/* Find all elements with an "overlay" class: */
-		x = document.getElementsByClassName("img-comp-overlay");
-		for (i = 0; i < x.length; i++) {
-			/* Once for each "overlay" element:
-			pass the "overlay" element as a parameter when executing the compareImages function: */
-			compareImages(x[i]);
-		}
-		function compareImages(img) {
-			var slider, img, clicked = 0, w, h;
-			/* Get the width and height of the img element */
-			w = img.offsetWidth;
-			h = img.offsetHeight;
-			/* Set the width of the img element to 50%: */
-			img.style.width = (w / 2) + "px";
-			/* Create slider: */
-			slider = document.createElement("DIV");
-			slider.setAttribute("class", "img-comp-slider");
-			/* Insert slider */
-			img.parentElement.insertBefore(slider, img);
-			/* Position the slider in the middle: */
-			slider.style.top = (h / 2) - (slider.offsetHeight / 2) + "px";
-			slider.style.left = (w / 2) - (slider.offsetWidth / 2) + "px";
-			/* Execute a function when the mouse button is pressed: */
-			slider.addEventListener("mousedown", slideReady);
-			/* And another function when the mouse button is released: */
-			window.addEventListener("mouseup", slideFinish);
-			/* Or touched (for touch screens: */
-			slider.addEventListener("touchstart", slideReady);
-			/* And released (for touch screens: */
-			window.addEventListener("touchend", slideFinish);
-			function slideReady(e) {
-			/* Prevent any other actions that may occur when moving over the image: */
-			e.preventDefault();
-			/* The slider is now clicked and ready to move: */
-			clicked = 1;
-			/* Execute a function when the slider is moved: */
-			window.addEventListener("mousemove", slideMove);
-			window.addEventListener("touchmove", slideMove);
-			}
-			
-			function slideFinish() {
-			/* The slider is no longer clicked: */
-			clicked = 0;
-			}
-			function slideMove(e) {
-			var pos;
-			/* If the slider is no longer clicked, exit this function: */
-			if (clicked == 0) return false;
-			/* Get the cursor's x position: */
-			pos = getCursorPos(e)
-			/* Prevent the slider from being positioned outside the image: */
-			if (pos < 0) pos = 0;
-			if (pos > w) pos = w;
-			/* Execute a function that will resize the overlay image according to the cursor: */
-			slide(pos);
-			}
-			function getCursorPos(e) {
-			var a, x = 0;
-			e = (e.changedTouches) ? e.changedTouches[0] : e;
-			/* Get the x positions of the image: */
-			a = img.getBoundingClientRect();
-			/* Calculate the cursor's x coordinate, relative to the image: */
-			x = e.pageX - a.left;
-			/* Consider any page scrolling: */
-			x = x - window.pageXOffset;
-			return x;
-			}
-			function slide(x) {
-			/* Resize the image: */
-			img.style.width = x + "px";
-			/* Position the slider: */
-			slider.style.left = img.offsetWidth - (slider.offsetWidth / 2) + "px";
-			}
-		}
-		}
-		</script>
-
-		
 
 	</head>
 
@@ -200,63 +72,78 @@
 				<!-- Header -->
 					<header id="header">
 						<div class="inner">
-							<h1>Fascinating Fractures</h1>
-							Short descriptions and images of interesting sea ice fracture patterns
-							
+
+							<!-- Logo -->
+								<!-- <a href="index.html" class="logo">
+									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Phantom</span>
+								</a> -->
+
+							<!-- Nav -->
+								<!-- <nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav> -->
+
 						</div>
 					</header>
 
+				<!-- Menu -->
+					<!-- <nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="generic.html">Ipsum veroeros</a></li>
+							<li><a href="generic.html">Tempus etiam</a></li>
+							<li><a href="generic.html">Consequat dolor</a></li>
+							<li><a href="elements.html">Elements</a></li>
+						</ul>
+					</nav> -->
 
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
+							<!-- <h1>Outreach</h1> -->
+							<!-- <span class="image main"><img src="images/pic13.jpg" alt="" /></span> -->
+							<!-- <h3>coming soon</h3> -->
+
+							<h1>Fascinating Fractures</h1>
+							Short descriptions and images of interesting sea ice fracture patterns
 							<br>
 							<br>
-							<h2>fascinating fractures a decade apart</h2>
-							In winter 2013, a major break out of the Beaufort Sea ice pack occurred, beginning as seen below with the formation of a large sea ice fracture extening offshore from Point Barrow, Alaska. Almost exactly a decade after the record pack ice breakout of winter 2013, another fascinating coastal sea ice fracture pattern formed in the eastern Beaufort Sea: a Wide Angle Lead extending from the coast near Kaktovik, Alaska.
-							<p></p>
+							<a href="fractures2.html" class="button large">Comparison: 2013 vs 2023</a>
+							<br>
+							<a href="fractures3.html" class="button large">2012 fracture event</a>
+							
 
-							<p>Drag the red slider below to compare satellite images of the sea ice cover in late February 2013 and 2023:</p>
-
-								<div class="img-comp-container">
-									<div class="img-comp-img">
-									  <img src="./files/MOD021KM.A2023048.0615.png"  height="400" >
-									</div>
-									<div class="img-comp-img img-comp-overlay">
-									  <img src="./files/MOD021KM.A2013053.2235.png" height="400" > 
-									</div>
-
-								</div>
-		
-							<script>
-							/*Execute a function that will execute an image compare function for each element with the img-comp-overlay class:*/
-							initComparisons();
-							</script>
-
-				
-
-							<a href="https://terra.nasa.gov/about/terra-instruments/modis">NASA Terra/MODIS imagery</a> plotted in python with data downloaded from <a href="https://ladsweb.modaps.eosdis.nasa.gov/">NASA LAADS DAAC</a>
-							<p>*If the slider is frozen, try refreshing the page!</p>
-							<p></p>
-							<p></p>
-							<p></p>
-
+							<br>
+							<br>
+							
 						</div>
-
-
-					
-
-
 					</div>
-
-
-			
-
-					
 
 				<!-- Footer -->
 					<footer id="footer">
 						<div class="inner">
+							<!-- <section> -->
+								<!-- <h2>Get in touch</h2>
+								<form method="post" action="#">
+									<div class="fields">
+										<div class="field half">
+											<input type="text" name="name" id="name" placeholder="Name" />
+										</div>
+										<div class="field half">
+											<input type="email" name="email" id="email" placeholder="Email" />
+										</div>
+										<div class="field">
+											<textarea name="message" id="message" placeholder="Message"></textarea>
+										</div>
+									</div>
+									<ul class="actions">
+										<li><input type="submit" value="Send" class="primary" /></li>
+									</ul>
+								</form> -->
+							<!-- </section> -->
 							<section>
 								<h2>Follow</h2>
 								<ul class="icons">

@@ -1,0 +1,286 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>MacKenzie Jewell - fascinating fractures</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+
+		<!-- Formatting for top navigation bar -->
+		<style>
+			body {
+			  margin: 20px;
+			  font-family: Arial, Helvetica, sans-serif;
+
+			}
+			
+			.topnav {
+			  width: 100%; 
+			  outline:none;
+    	      float: center;
+			  overflow: visible;
+			  background-color: rgb(255, 255, 255);
+	
+			}
+			
+			.topnav a {
+			  outline: 0px;
+			  float: left;
+			  color: #000000;
+			  text-align: center;
+			  padding: 10px 60px;
+			  text-decoration: none;
+			  font-size: 20px;
+			  border-bottom: 0px solid transparent;
+			}
+			
+			.topnav a:hover {
+			  background-color: #ffffff;
+			  color: black;
+			}
+			
+			.topnav a.active {
+			  background-color: #90aed7;
+			  color: white;
+			}
+
+
+			/* formatting for overlain images */
+			* {box-sizing: border-box;}
+
+			.img-comp-container {
+				display: flex;
+				position: relative;
+				height: 400px ; /*  should be the same height as the images */
+				/* width: 533px; */
+			}
+
+			.img-comp-img {
+				position: absolute;
+				width: auto;
+				height: auto;
+				overflow: hidden;
+			}
+
+			.img-comp-img img {
+				display: block;
+				vertical-align: middle;
+				border-radius: 0.5rem;
+				}
+
+			.img-comp-slider {
+				position: absolute;
+				z-index: 9;
+				cursor: ew-resize;
+				/*set the appearance of the slider:*/
+				width: 40px;
+				height: 40px;
+				background-color: rgb(194, 103, 126);
+				opacity: 0.9;
+				border-radius: 100%;
+				box-shadow: -2px 5px 16px 1px black;
+
+				}
+
+			.img-comp-slider:hover {
+				box-shadow: 0 0 10px rgba(0,0,0,0.3); 
+			}
+
+		</style>
+		
+		
+	
+		<script>
+		/* function for creating image comparison slider */
+		function initComparisons() {
+		var x, i;
+		/* Find all elements with an "overlay" class: */
+		x = document.getElementsByClassName("img-comp-overlay");
+		for (i = 0; i < x.length; i++) {
+			/* Once for each "overlay" element:
+			pass the "overlay" element as a parameter when executing the compareImages function: */
+			compareImages(x[i]);
+		}
+		function compareImages(img) {
+			var slider, img, clicked = 0, w, h;
+			/* Get the width and height of the img element */
+			w = img.offsetWidth;
+			h = img.offsetHeight;
+			/* Set the width of the img element to 50%: */
+			img.style.width = (w / 2) + "px";
+			/* Create slider: */
+			slider = document.createElement("DIV");
+			slider.setAttribute("class", "img-comp-slider");
+			/* Insert slider */
+			img.parentElement.insertBefore(slider, img);
+			/* Position the slider in the middle: */
+			slider.style.top = (h / 2) - (slider.offsetHeight / 2) + "px";
+			slider.style.left = (w / 2) - (slider.offsetWidth / 2) + "px";
+			/* Execute a function when the mouse button is pressed: */
+			slider.addEventListener("mousedown", slideReady);
+			/* And another function when the mouse button is released: */
+			window.addEventListener("mouseup", slideFinish);
+			/* Or touched (for touch screens: */
+			slider.addEventListener("touchstart", slideReady);
+			/* And released (for touch screens: */
+			window.addEventListener("touchend", slideFinish);
+			function slideReady(e) {
+			/* Prevent any other actions that may occur when moving over the image: */
+			e.preventDefault();
+			/* The slider is now clicked and ready to move: */
+			clicked = 1;
+			/* Execute a function when the slider is moved: */
+			window.addEventListener("mousemove", slideMove);
+			window.addEventListener("touchmove", slideMove);
+			}
+			
+			function slideFinish() {
+			/* The slider is no longer clicked: */
+			clicked = 0;
+			}
+			function slideMove(e) {
+			var pos;
+			/* If the slider is no longer clicked, exit this function: */
+			if (clicked == 0) return false;
+			/* Get the cursor's x position: */
+			pos = getCursorPos(e)
+			/* Prevent the slider from being positioned outside the image: */
+			if (pos < 0) pos = 0;
+			if (pos > w) pos = w;
+			/* Execute a function that will resize the overlay image according to the cursor: */
+			slide(pos);
+			}
+			function getCursorPos(e) {
+			var a, x = 0;
+			e = (e.changedTouches) ? e.changedTouches[0] : e;
+			/* Get the x positions of the image: */
+			a = img.getBoundingClientRect();
+			/* Calculate the cursor's x coordinate, relative to the image: */
+			x = e.pageX - a.left;
+			/* Consider any page scrolling: */
+			x = x - window.pageXOffset;
+			return x;
+			}
+			function slide(x) {
+			/* Resize the image: */
+			img.style.width = x + "px";
+			/* Position the slider: */
+			slider.style.left = img.offsetWidth - (slider.offsetWidth / 2) + "px";
+			}
+		}
+		}
+		</script>
+
+		
+
+	</head>
+
+    <!-- Top Nav bar -->
+	<div class="topnav">
+		<a href="index.html">Home</a>
+		<!-- <a href="research.html">Research</a> -->
+		<a href="publications.html">Publications</a>
+		<a href="outreach.html">Outreach</a>
+		<a href="cv.html">Curriculum Vitae</a>
+		<a class="active" href="more.html">More</a>
+	</div>
+
+
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+							<h1>Fascinating Fractures</h1>
+							Short descriptions and images of interesting sea ice fracture patterns
+							
+						</div>
+					</header>
+
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<br>
+							<br>
+							<h2>Major fractures a decade apart</h2>
+							In winter 2013, a major break out of the Beaufort Sea ice pack occurred, beginning as seen below with the formation of a large sea ice fracture extening offshore from Point Barrow, Alaska. Almost exactly a decade after the record pack ice breakout of winter 2013, another fascinating coastal sea ice fracture pattern formed in the eastern Beaufort Sea: a Wide Angle Lead extending from the coast near Kaktovik, Alaska.
+							<p></p>
+
+							<p>Drag the red slider below to compare satellite images of the sea ice cover in late February 2013 and 2023:</p>
+
+								<div class="img-comp-container">
+									<div class="img-comp-img">
+									  <img src="./files/MOD021KM.A2023048.0615.png"  height="400" >
+									</div>
+									<div class="img-comp-img img-comp-overlay">
+									  <img src="./files/MOD021KM.A2013053.2235.png" height="400" > 
+									</div>
+
+								</div>
+		
+							<script>
+							/*Execute a function that will execute an image compare function for each element with the img-comp-overlay class:*/
+							initComparisons();
+							</script>
+
+				
+
+							<a href="https://terra.nasa.gov/about/terra-instruments/modis">NASA Terra/MODIS imagery</a> plotted in python with data downloaded from <a href="https://ladsweb.modaps.eosdis.nasa.gov/">NASA LAADS DAAC</a>
+							<p>*If the slider is frozen, try refreshing the page!</p>
+							<p></p>
+							<p></p>
+							<p></p>
+
+						</div>
+
+
+					
+
+
+					</div>
+
+
+			
+
+					
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Follow</h2>
+								<ul class="icons">
+									<li><a href="https://www.linkedin.com/in/mackenzie-jewell-9bb44b174" class="icon brands style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>
+									<li><a href="https://github.com/mackenziejewell" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="https://scholar.google.com/citations?hl=en&user=ehDAOAMAAAAJ" class="icon brands style2 fa-google"><span class="label">GoogleScholar</span></a></li>
+									<li><a href="https://www.researchgate.net/profile/Mackenzie_Jewell" class="icon brands style2 fa-researchgate"><span class="label">ResearchGate</span></a></li>
+									<li><a href="mailto:mackenzie.e.jewell@gmail.com" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+								</ul>
+							</section>
+							<ul class="copyright">
+								<li>&copy; MacKenzie Jewell. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
